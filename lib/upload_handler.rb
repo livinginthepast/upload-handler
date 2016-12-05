@@ -5,7 +5,7 @@ require 'sinatra'
 
 class UploadHandler < Sinatra::Base
   put '/*.*' do
-    filename = '/tmp/asset-server/' + params['splat'].join('.')
+    filename = '/tmp/upload-handler/' + params['splat'].join('.')
     dirname = File.dirname(filename)
     FileUtils.mkdir_p(dirname)
     File.open(filename, 'w') do |f|
